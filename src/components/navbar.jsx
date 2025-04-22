@@ -1,3 +1,4 @@
+import logo from '../assets/images/logo.png'
 
 function Navbar() {
     return (
@@ -7,7 +8,7 @@ function Navbar() {
                 <section className="flex justify-between items-center">
                     {/* section 1 */}
                     <div>
-                        <img src="../assets/images/logo.png" className="w-[150%]"></img>
+                        <img src={logo} className="w-[150%]"></img>
                     </div>
                     {/* section 2 */}
                     <div className="flex gap-5">

@@ -14,6 +14,11 @@
     font-size: 170%;
 }
 
+#filterArea img {
+    width: 30px;
+}
+
+
 @media screen and (max-width:700px) {
 
     #navbar {
@@ -23,7 +28,25 @@
 }
 
 @media screen and (min-width:700px) {
-    #searchbar{
+    #searchbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width:700px) {
+    #searchbar__section {
+        display: none;
+    }
+}
+
+@media screen and (max-width:700px) {
+    #filterArea__scrollbar {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    #filterArea__filter__icon {
         display: none;
     }
 }
