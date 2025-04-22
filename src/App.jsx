@@ -1,7 +1,13 @@
+import FilterArea from "./components/filterArea"
+import Navbar from "./components/navbar"
+import Searchbar from "./components/searchbar"
+
 function App() {
   return (
     <>
-      <h1 className="">Airbnb</h1>
+      <Navbar />
+      <Searchbar />
+      <FilterArea/>
     </>
   )
 }
