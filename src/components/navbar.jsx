@@ -3,7 +3,7 @@ import logo from '../assets/images/logo.png'
 function Navbar() {
     return (
         <>
-            <div className="px-10 py-5" id="navbar">
+            <div className="px-10 py-5 sticky top-0 bg-white" id="navbar">
                 {/* navbar sections */}
                 <section className="flex justify-between items-center">
                     {/* section 1 */}
@@ -11,13 +11,13 @@ function Navbar() {
                         <img src={logo} className="w-[150%]"></img>
                     </div>
                     {/* section 2 */}
-                    <div className="flex gap-5">
+                    <div className="flex gap-5 text-xl items-center">
                         <h1>Homes</h1>
                         <h1>Experiences</h1>
                     </div>
                     {/* section 3 */}
                     <div className="flex gap-3 items-center">
-                        <h1 className="whitespace-nowrap">Airbnb your home</h1>
+                        <h1 className="whitespace-nowrap font-semibold">Airbnb your home</h1>
                         <i class="fa-solid fa-globe" id="globe__icon" ></i>
 
                         <div
@@ -32,7 +32,7 @@ function Navbar() {
             </div>
 
             {/* minimum  screen size design */}
-            <section className="px-10 py-5 cursor-pointer" id="searchbar">
+            <section className="px-10 py-5 cursor-pointer sticky top-0 bg-white" id="searchbar">
                 <div
                     className="flex items-center gap-5 rounded-3xl p-[2%] 
                 shadow-lg justify-center ">

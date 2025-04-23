@@ -18,6 +18,17 @@
     width: 30px;
 }
 
+#places__images img{
+    height: 320px;
+    width:300px;
+    border-radius: 10%;
+}
+
+#places__images__1 img{
+    height: 320px;
+    width:300px;
+    border-radius: 10%;
+}
 
 @media screen and (max-width:700px) {
 
@@ -48,5 +59,26 @@
 @media screen and (max-width:700px) {
     #filterArea__filter__icon {
         display: none;
+    }
+}
+
+@media screen and (max-width:700px){
+
+    body{
+        font-size: 50%;
+    }
+    #places__images img{
+        height:240px;
+        width:220px;
+    }
+
+    #places__images__1 img{
+        height:240px;
+        width:220px;
+    }
+
+    #filterArea__main{
+        top:9%;
+        position: sticky;
     }
 }
