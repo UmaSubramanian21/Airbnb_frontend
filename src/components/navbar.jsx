@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import logo from '../assets/images/logo.png'
+import SearchBar from './searchbar'
 
 function Navbar() {
+    const [home, setHome] = useState(true)
+
     return (
         <>
             <div className="px-10 py-5 sticky top-0 bg-white" id="navbar">
@@ -12,8 +16,13 @@ function Navbar() {
                     </div>
                     {/* section 2 */}
                     <div className="flex gap-5 text-xl items-center">
-                        <h1>Homes</h1>
-                        <h1>Experiences</h1>
+                        <h1
+                            className='cursor-pointer'
+                            onClick={() => { setHome(true) }}>Homes</h1>
+                        <h1
+                            className='cursor-pointer'
+                            onClick={() => { setHome(false) }}>Experiences</h1>
+
                     </div>
                     {/* section 3 */}
                     <div className="flex gap-3 items-center">
@@ -42,6 +51,7 @@ function Navbar() {
                         placeholder="Start your search "></input>
                 </div>
             </section>
+            <SearchBar homeClicked={home} />
         </>
     )
 }

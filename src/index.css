@@ -18,16 +18,28 @@
     width: 30px;
 }
 
-#places__images img{
+#places__images img {
     height: 320px;
-    width:300px;
+    width: 300px;
     border-radius: 10%;
 }
 
-#places__images__1 img{
+#places__images__1 img {
     height: 320px;
-    width:300px;
+    width: 300px;
     border-radius: 10%;
+}
+
+#footer__section__1 h4 {
+    color: gray;
+}
+
+#footer__section__1 p {
+    font-weight: 500;
+}
+
+#footer__section__2 p {
+    margin-right: 10%;
 }
 
 @media screen and (max-width:700px) {
@@ -62,23 +74,24 @@
     }
 }
 
-@media screen and (max-width:700px){
+@media screen and (max-width:700px) {
 
-    body{
+    /* body {
         font-size: 50%;
-    }
-    #places__images img{
-        height:240px;
-        width:220px;
+    } */
+
+    #places__images img {
+        height: 240px;
+        width: 220px;
     }
 
-    #places__images__1 img{
-        height:240px;
-        width:220px;
+    #places__images__1 img {
+        height: 240px;
+        width: 220px;
     }
 
-    #filterArea__main{
-        top:9%;
+    #filterArea__main {
+        top: 9%;
         position: sticky;
     }
 }
