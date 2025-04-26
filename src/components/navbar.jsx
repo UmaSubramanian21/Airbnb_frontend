@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import logo from '../assets/images/logo.png'
 import SearchBar from './searchbar'
+import DropdownMenu from "./menu";
 
 function Navbar() {
     const [home, setHome] = useState(true)
-
+    const [menu, setMenu] = useState(false)
     return (
         <>
             <div className="px-10 py-5 sticky top-0 bg-white" id="navbar">
@@ -25,7 +26,9 @@ function Navbar() {
 
                     </div>
                     {/* section 3 */}
-                    <div className="flex gap-3 items-center">
+                    <div
+                        onClick={() => { setMenu(!menu) }}
+                        className="flex gap-3 items-center">
                         <h1 className="whitespace-nowrap font-semibold">Airbnb your home</h1>
                         <i class="fa-solid fa-globe" id="globe__icon" ></i>
 
@@ -52,6 +55,8 @@ function Navbar() {
                 </div>
             </section>
             <SearchBar homeClicked={home} />
+            {menu ? (<DropdownMenu />) : ""}
+
         </>
     )
 }
