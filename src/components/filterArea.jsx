@@ -75,7 +75,7 @@ const FilterArea = ({ selectedCategory, setSelectedCategory }) => {
 
   return (
     <>
-      <section id="filterArea__main" className='flex justify-between items-center px-10 bg-white sticky top-[19%]'>
+      <section id="filterArea__main" className='flex justify-between items-center px-10 bg-white sticky top-[19%] '>
         <div className="relative w-[70%] px-10 " id="filterArea__scrollbar">
           {/* Left Scroll Button */}
           <button
@@ -89,8 +89,8 @@ const FilterArea = ({ selectedCategory, setSelectedCategory }) => {
           <section
             id="filterArea"
             ref={scrollRef}
-            className="flex gap-4 overflow-hidden px-4 py-5 scroll-smooth no-scrollbar"
-          >
+            className="flex gap-4 overflow-hidden px-4 py-5 scroll-smooth no-scrollbar">
+
             {Object.entries(images).map(([path, src]) => {
               const fileName = path.split('/').pop();
               const data = imageRoutes[fileName];

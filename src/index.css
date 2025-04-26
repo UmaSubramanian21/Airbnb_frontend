@@ -54,10 +54,16 @@
     #searchbar {
         display: none;
     }
+
+
 }
 
 @media screen and (max-width:700px) {
     #searchbar__section {
+        display: none;
+    }
+
+    #addGuest__com {
         display: none;
     }
 }
