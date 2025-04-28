@@ -1,70 +1,74 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom"; 
 import SignInModal from "./menu__Components/signIn";
 
-export default function DropdownMenu() {
-    const navigate = useNavigate()
-    const [showSignUp, setSignUp] = useState(false)
-    const [showHostYourHome, setHost] = useState(false)
+export default function DropdownMenu({ onSignIn }) {
+    // States to control showing SignUp modal and Dropdown menu
+    const [showSignUp, setSignUp] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(true); // Default open menu (because Navbar controls it)
 
-    const [isModalOpen, setIsModalOpen] = useState(true)
-    const handleClose = () => setIsModalOpen(false)
-
-    // for handle all dialogue boxes when normal click
+    // Close Dropdown if background is clicked
     const handleBackgroundClick = (e) => {
         if (e.target === e.currentTarget) {
-            handleClose()
+            setIsModalOpen(false);
         }
-    }
+    };
+
+    // Toggle signup/login modal
+    const handleSignUpClick = () => {
+        setSignUp(true);
+    };
 
     return (
         <>
-            {isModalOpen && (<div>
-                <div
-                    onClick={handleBackgroundClick}
-                    className="w-60 rounded-xl shadow-lg 
-                         bg-white overflow-hidden 
-                        fixed z-50 top-24 right-10">
-                    {/* Upper part */}
-
-                    <div
-
-                        className="flex flex-col">
-                        <div
-                            onClick={() => { setSignUp(!showSignUp) }}
-                            className="px-4 py-3 hover:bg-gray-100 font-semibold cursor-pointer">
-                            Sign up
-                        </div>
-                        <div
-                            onClick={() => { setSignUp(!showSignUp) }}
-                            className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                            Log in
-                        </div>
-                    </div>
-
-                    <hr className="text-gray-300" />
-
-                    {/* Lower part */}
-                    <div className="flex flex-col">
-                        <Link to="/host-your-home"><div
-                            className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                            Airbnb your home
-                        </div></Link>
-                        <div className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                            Host an experience
-                        </div>
-                        <div className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
-                            Help Centre
-                        </div>
-                    </div>
-                </div>
-
-                {/* signup dialogue box ,  */}
+            {/* Main Dropdown Menu */}
+            {isModalOpen && (
                 <div>
-                    {showSignUp ? (<SignInModal />) : ""}
+                    <div
+                        onClick={handleBackgroundClick}
+                        className="w-60 rounded-xl shadow-lg bg-white overflow-hidden fixed z-50 top-24 right-10"
+                    >
+                        {/* Top Section: Sign up and Login */}
+                        <div className="flex flex-col">
+                            <div
+                                onClick={handleSignUpClick}
+                                className="px-4 py-3 hover:bg-gray-100 font-semibold cursor-pointer"
+                            >
+                                Sign up
+                            </div>
+                            <div
+                                onClick={handleSignUpClick}
+                                className="px-4 py-3 hover:bg-gray-100 cursor-pointer"
+                            >
+                                Log in
+                            </div>
+                        </div>
 
+                        {/* Separator */}
+                        <hr className="text-gray-300" />
+
+                        {/* Bottom Section: Hosting and Help */}
+                        <div className="flex flex-col">
+                            <Link to="/host-your-home">
+                                <div className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                    Airbnb your home
+                                </div>
+                            </Link>
+                            <div className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                Host an experience
+                            </div>
+                            <div className="px-4 py-3 hover:bg-gray-100 cursor-pointer">
+                                Help Centre
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* SignUp / SignIn Modal */}
+                    {showSignUp && (
+                        <SignInModal onSignIn={onSignIn} /> //  Pass `onSignIn` here
+                    )}
                 </div>
-            </div>)}
+            )}
         </>
     );
 }
