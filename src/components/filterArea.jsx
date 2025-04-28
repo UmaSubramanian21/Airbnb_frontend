@@ -1,6 +1,7 @@
 
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import filter_icon from '../assets/images/filter__logo.jpg'
+import priceTag from '../assets/images/price tag.png'
 
 const images = import.meta.glob('/src/assets/images/*.{jpg,jpeg,png,svg}', {
   eager: true,
@@ -73,14 +74,21 @@ const FilterArea = ({ selectedCategory, setSelectedCategory }) => {
     scrollRef.current?.scrollBy({ left: 300, behavior: 'smooth' });
   };
 
+
   return (
     <>
-      <section id="filterArea__main" className='flex justify-between items-center px-10 bg-white sticky top-[19%] '>
-        <div className="relative w-[70%] px-10 " id="filterArea__scrollbar">
+      <section id="filterArea__main"
+        className='flex justify-between items-center 
+                  px-10 bg-white sticky top-[19%]'>
+
+        {/* icons section  */}
+        <div className="relative w-[70%] px-10 "
+          id="filterArea__scrollbar">
           {/* Left Scroll Button */}
           <button
             onClick={scrollLeft}
-            className="absolute border-gray-500 left-2 top-1/2 -translate-y-1/2 z-10 p-2 bg-white shadow-md rounded-full"
+            className="absolute border-gray-500 left-2 top-1/2 -translate-y-1/2 z-10 p-2 
+                    bg-white shadow-md rounded-full"
           >
             ←
           </button>
@@ -119,17 +127,26 @@ const FilterArea = ({ selectedCategory, setSelectedCategory }) => {
           </button>
 
         </div>
-        {/* filter */}
 
-        <section id="filterArea__filter__icon">
+        {/* filter */}
+        <section id="filterArea__filter__icon" className='flex right-0 gap-10'>
           <div className=' rounded-lg flex gap-1 shadow-lg w-[18%] p-2 items-center justify-center'>
             <div><img src={filter_icon} ></img></div>
             <p className='text-xs font-bold'>Filter</p>
           </div>
+          {/* offer section */}
+        <div className="flex items-center justify-between">
+            <img
+              src={priceTag}
+              alt="Price Tag"
+              className="w-16 mr-2 animate-pulse" ></img>
+            <p className="whitespace-nowrap">Prices include all fees</p>
+          </div>
         </section>
+        
       </section>
     </>
-  );
-};
+  )
+}
 
 export default FilterArea;

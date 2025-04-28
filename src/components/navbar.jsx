@@ -2,13 +2,16 @@ import { useState } from 'react'
 import logo from '../assets/images/logo.png'
 import SearchBar from './searchbar'
 import DropdownMenu from "./menu";
+import { Link } from 'react-router';
 
 function Navbar() {
     const [home, setHome] = useState(true)
     const [menu, setMenu] = useState(false)
+
     return (
         <>
-            <div className="px-10 py-5 sticky top-0 bg-white" id="navbar">
+            <div
+                className="px-10 py-5 sticky top-0 bg-white" id="navbar">
                 {/* navbar sections */}
                 <section className="flex justify-between items-center">
                     {/* section 1 */}
@@ -27,12 +30,13 @@ function Navbar() {
                     </div>
                     {/* section 3 */}
                     <div
-                        onClick={() => { setMenu(!menu) }}
                         className="flex gap-3 items-center">
-                        <h1 className="whitespace-nowrap font-semibold">Airbnb your home</h1>
+                        <Link to="/host-your-home"> <h1 className="whitespace-nowrap font-semibold cursor-pointer">Airbnb your home</h1></Link>
                         <i class="fa-solid fa-globe" id="globe__icon" ></i>
 
                         <div
+                            onClick={() => { setMenu(!menu) }}
+
                             className="bg-gray-200 items-center hover:outline-gray-600 border 
                                         rounded-3xl px-5 py-3 flex gap-3 cursor-pointer 
                                         hover:shadow-2xl border-gray-300 ">

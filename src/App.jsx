@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 
 import Home from "./home";
+import HostEarningsEstimator from "./components/menu__Components/HostYourHome";
+import AskSuperhost from "./components/menu__Components/Ask_a_host";
+import Airbnb__setUp from "./components/menu__Components/airbnb__setup";
 
 function App() {
   return (
@@ -8,6 +11,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/host-your-home" element={<HostEarningsEstimator />}></Route>
+          <Route path="/airbnb-setup" element={<Airbnb__setUp />}></Route>
+          <Route path="/ask-a-host" element={<AskSuperhost />}></Route>
         </Routes>
       </BrowserRouter>
     </>
