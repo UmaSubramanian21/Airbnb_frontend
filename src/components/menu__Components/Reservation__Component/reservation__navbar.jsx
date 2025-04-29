@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import logo from '../assets/images/logo.png';
-import SearchBar from './searchbar';
-import DropdownMenu from "./menu";
+import logo from '../../../assets/images/logo.png';
+
+import DropdownMenu from "../../menu";
 import { Link } from 'react-router-dom';
-import UserMenu from './menu__Components/menu_after_login';
-import SignInModal from './menu__Components/signIn';
+import UserMenu from '../../menu__Components/menu_after_login';
 
 function Navbar() {
     const [home, setHome] = useState(true);
@@ -34,12 +33,12 @@ function Navbar() {
     return (
         <>
             {/* Navbar */}
-            
+
             <div className="px-10 py-5 sticky top-0 bg-white" id="navbar">
                 <section className="flex justify-between items-center">
                     {/* Section 1: Logo */}
                     <div>
-                        <img src={logo} className="w-[150%]" alt="Logo" />
+                        <Link to="/"><img src={logo} className="w-[150%]" alt="Logo" /></Link>
                     </div>
 
                     {/* Section 2: Navigation Links */}
@@ -74,9 +73,6 @@ function Navbar() {
                         placeholder="Start your search" />
                 </div>
             </section>
-
-            {/* SearchBar Component */}
-            <SearchBar homeClicked={home} />
 
             {/* Dropdown Menu on Click */}
             {menu && (
