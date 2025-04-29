@@ -57,6 +57,14 @@ export default function SignInModal({ onSignIn }) {
             const result = await signInWithPopup(auth, googleProvider);
             const user = result.user;
 
+            // Send user info to backend
+            await axios.post('http://localhost:7000/api/user/save-user', {
+                name: user.displayName,
+                email: user.email
+            });
+
+            alert("Login successful and user saved to DB.");
+
             console.log("User signed in:", user);
             console.log("User's Name: ", user.displayName);
 

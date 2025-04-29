@@ -8,6 +8,7 @@ import BookingBox from './BookingBox';
 import logo from '../../../assets/images/logo.png'
 import { Link } from 'react-router';
 import Navbar from "./reservation__navbar"
+import PlaceDetails from './PlaceDetails';
 
 export default function PropertyPage() {
     return (
@@ -17,6 +18,7 @@ export default function PropertyPage() {
 
                 {/* Left Section */}
                 <div className="flex-1 flex flex-col gap-6 px-10 py-5">
+                    <PlaceDetails />
                     <PropertyHeader />
                     <PropertyHighlights />
                     <HostInfo />
