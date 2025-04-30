@@ -89,7 +89,7 @@ export default function SignInModal({ onSignIn }) {
                     onClick={handleBackgroundClick}
                     className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 animate-fadeIn"
                 >
-                    <div className="bg-white rounded-2xl p-6 w-[50%] max-w-full shadow-lg overflow-y-auto">
+                    <div className="bg-white rounded-2xl p-6 w-[70%] md:w-[50%] max-w-full shadow-lg overflow-y-auto">
                         <div className="flex justify-between items-center mb-4">
                             <button
                                 onClick={handleClose}
