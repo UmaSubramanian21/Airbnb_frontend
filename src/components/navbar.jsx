@@ -43,7 +43,7 @@ function Navbar() {
                     </div>
 
                     {/* Section 2: Navigation Links */}
-                    <div className="flex gap-5 text-xl items-center">
+                    <div className="flex gap-5 text-xl items-center" id="list">
                         <h1 className='cursor-pointer' onClick={() => setHome(true)}>Homes</h1>
                         <h1 className='cursor-pointer' onClick={() => setHome(false)}>Experiences</h1>
                     </div>

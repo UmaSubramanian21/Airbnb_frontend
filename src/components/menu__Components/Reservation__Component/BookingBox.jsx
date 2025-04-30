@@ -90,6 +90,7 @@ export default function BookingBox() {
       currency: orderData.currency,
       description: `Booking at ${place.name}`,
       order_id: orderData.id,
+      
       handler: function (response) {
         alert("Payment Successful!");
         console.log("Payment Success:", response);
