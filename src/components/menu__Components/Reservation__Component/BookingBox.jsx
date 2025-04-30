@@ -71,8 +71,9 @@ export default function BookingBox() {
   // Handle Reserve button click and create Razorpay order
   const handleReserve = async () => {
     try {
-      const { data } = await axios.post('http://localhost:7000/payment/api', {
-        amount: booking_details.amount
+      const { data } = await axios.post('http://localhost:7000/api/payment/api', {
+        // amount: booking_details.amount
+        amount: Math.round(booking_details.amount)
       });
       initPayment(data);
     } catch (err) {

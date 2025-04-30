@@ -13,14 +13,14 @@ function Places() {
     const navigate = useNavigate();
 
     const places = [
-        { image: gokarna, name: "Gokarna", rating: "4.94", distance: "4535 Kilometers", date: "23-25 May", price: 76000 },
-        { image: india, name: "India", rating: "5.94", distance: "2784 Kilometers", date: "03-09 May", price: 67000 },
-        { image: kandy, name: "Kandy", rating: "3.94", distance: "4786 Kilometers", date: "09-15 May", price: 98000 },
-        { image: karnataka, name: "Karnataka", rating: "4.94", distance: "3683 Kilometers", date: "03-09 May", price: 89000 },
-        { image: kollam, name: "Kollam", rating: "4.94", distance: "983 Kilometers", date: "23-25 June", price: 89000 },
-        { image: kothagiri, name: "Kothagiri", rating: "2.90", distance: "3875 Kilometers", date: "25-30 June", price: 76000 },
-        { image: munnar, name: "Munnar", rating: "4.94", distance: "455 Kilometers", date: "23-25 June", price: 49000 },
-        { image: nandhi, name: "Nandhi", rating: "4.94", distance: "3544 Kilometers", date: "23-25 July", price: 41000 },
+        { image: gokarna, name: "Gokarna", rating: "4.94", distance: "4535 Kilometers", date: "23-25 May", price: 7600 },
+        { image: india, name: "India", rating: "5.94", distance: "2784 Kilometers", date: "03-09 May", price: 6700 },
+        { image: kandy, name: "Kandy", rating: "3.94", distance: "4786 Kilometers", date: "09-15 May", price: 9800 },
+        { image: karnataka, name: "Karnataka", rating: "4.94", distance: "3683 Kilometers", date: "03-09 May", price: 8900 },
+        { image: kollam, name: "Kollam", rating: "4.94", distance: "983 Kilometers", date: "23-25 June", price: 8900 },
+        { image: kothagiri, name: "Kothagiri", rating: "2.90", distance: "3875 Kilometers", date: "25-30 June", price: 7600 },
+        { image: munnar, name: "Munnar", rating: "4.94", distance: "455 Kilometers", date: "23-25 June", price: 4900 },
+        { image: nandhi, name: "Nandhi", rating: "4.94", distance: "3544 Kilometers", date: "23-25 July", price: 4100 },
     ];
 
     function handleReserve(place) {
